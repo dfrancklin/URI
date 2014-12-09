@@ -16,7 +16,7 @@
 #define TRUE	1
 #define FALSE	0
 
-int main ()
+int main()
 {
 	int x1, x2, y1, y2;
 	float DISTANCIA;

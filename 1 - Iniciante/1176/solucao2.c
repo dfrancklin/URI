@@ -18,7 +18,7 @@
 
 long int fibonacci(int n);
 
-int main ()
+int main()
 {
 	int N, M, i, k;
 	

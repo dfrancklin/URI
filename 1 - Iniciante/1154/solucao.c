@@ -16,7 +16,7 @@
 #define TRUE	1
 #define FALSE	0
 
-int main ()
+int main()
 {
 	int A, C = 0;
 	double B = 0;

@@ -15,7 +15,8 @@
 
 #define TRUE	1
 #define FALSE	0
-int main ()
+
+int main()
 {
 	int N = 0, I = 0, G = 0, E = 0, A, B, C;
 	

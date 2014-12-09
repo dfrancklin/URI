@@ -16,7 +16,7 @@
 #define TRUE	1
 #define FALSE	0
 
-int main ()
+int main()
 {
 	int C, Q;
 	double L[5] = {4, 4.5, 5, 2, 1.5}, T;

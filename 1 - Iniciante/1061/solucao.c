@@ -16,7 +16,7 @@
 #define TRUE	1
 #define FALSE	0
 
-int main ()
+int main()
 {
 	int DI, DF, D, HI, HF, H, MI, MF, M, SI, SF, S;
 	

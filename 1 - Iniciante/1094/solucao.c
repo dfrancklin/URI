@@ -16,7 +16,7 @@
 #define TRUE	1
 #define FALSE	0
 
-int main ()
+int main()
 {
 	int N, Q, C = 0, R = 0, S = 0, total = 0;
 	char T;

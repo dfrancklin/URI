@@ -15,8 +15,7 @@
 
 #define TRUE	1
 #define FALSE	0
-
-#define M 70
+#define M		70
 
 int main()
 {

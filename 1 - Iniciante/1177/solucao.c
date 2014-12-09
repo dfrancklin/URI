@@ -17,7 +17,7 @@
 #define FALSE	0
 #define TAM		1000
 
-int main ()
+int main()
 {
 	int N[TAM], T, i, k;
 	

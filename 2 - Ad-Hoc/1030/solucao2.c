@@ -16,7 +16,7 @@
 #define TRUE	1
 #define FALSE	0
 
-int main ()
+int main()
 {
 	int N, Q, S, pessoas[10000], i, k, m, p, u;
 	

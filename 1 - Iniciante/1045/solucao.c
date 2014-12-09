@@ -32,7 +32,7 @@ void ordena(double *vetor)
 			}
 }
 
-int main ()
+int main()
 {
 	double lados[LADOS];
 	

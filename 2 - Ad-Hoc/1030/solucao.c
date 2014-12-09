@@ -33,7 +33,7 @@ void Iniciar(TDesc *);
 void Inserir(TDesc *, int);
 void Matar(TDesc *, int);
 
-int main ()
+int main()
 {
 	int N, Q, S, i, j;
 	TDesc lista;

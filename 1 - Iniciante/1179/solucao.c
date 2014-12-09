@@ -16,7 +16,7 @@
 #define TRUE	1
 #define FALSE	0
 
-int main ()
+int main()
 {
 	int par[5], impar[5], k, p = 0, i = 0, A;
 	
