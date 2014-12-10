@@ -18,45 +18,38 @@
 
 int main()
 {
-	int N, Q, S, pessoas[10000], i, k, m, p, u;
+	char dollares[110], centavos, i, c;
 	
 	#ifdef DEBUG
 		double tI_ = clock();
 	#endif
 	
-	scanf("%d", &N);
-	
-	for(i = 1; i <= N; i++)
+	while(scanf("%s", dollares) != EOF)
 	{
-		scanf("%d %d", &Q, &S);
+		scanf("%hhd", &centavos);
 		
-		for(k = 0; k < 10000; k++)
-			pessoas[k] = 1;
+		printf("$");
 		
-		m = p = 0;
+		for(i = 0; i < strlen(dollares) % 3; i++)
+			printf("%c", dollares[i]);
 		
-		while(m < (Q - 1))
-			for(k = 0; k < Q; k++)
+		if(i > 0 && i < strlen(dollares))
+			printf(",");
+		
+		c = 0;
+		
+		for(; dollares[i] != '\0'; i++, c++)
+		{	
+			printf("%c", dollares[i]);
+			
+			if(c == 2 && dollares[i + 1] != '\0')
 			{
-				if(pessoas[k] == 1)
-					p++;
-				
-				if(p == S)
-				{
-					pessoas[k] = 0;
-					m++;
-					p = 0;
-				}
+				printf(",");
+				c = -1;
 			}
+		}
 		
-		for(k = 0; k < Q; k++)
-			if(pessoas[k] == 1)
-			{
-				u = k + 1;
-				break;
-			}
-		
-		printf("Case %d: %d\n", i, u);
+		printf(".%02hhd\n", centavos);
 	}
 	
 	#ifdef DEBUG

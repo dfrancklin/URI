@@ -15,25 +15,35 @@
 
 #define TRUE	1
 #define FALSE	0
+#define CONECT	5
+
+int compat(int *conect1, int *conect2)
+{
+	int i;
+	
+	for(i = 0; i < CONECT; i++)
+		if(conect1[i] == conect2[i])
+			return 0;
+	
+	return 1;
+}
 
 int main()
 {
-	int Q, D, P;
-	float paginas;
+	int conectores[2][CONECT], i, j;
 	
 	#ifdef DEBUG
 		double tI_ = clock();
 	#endif
 	
-	while(scanf("%d %d %d", &Q, &D, &P) != EOF && !(Q == 0))
-	{
-		paginas = ((((float)(Q * D) / -(Q - P)) + D) * Q);
-		
-		if(1 == (int) paginas)
-			printf("%d pagina\n", (int) paginas);
-		else
-			printf("%d paginas\n", (int) paginas);
-	}
+	for(i = 0; i < 2; i++)
+		for(j = 0; j < CONECT; j++)
+			scanf("%d", &conectores[i][j]);
+	
+	if(compat(conectores[0], conectores[1]))
+		printf("Y\n");
+	else
+		printf("N\n");
 	
 	#ifdef DEBUG
 		printf("Tempo: %.1lf %.1lf\n", clock() - tI_, (clock() - tI_) / CLK_TCK);
