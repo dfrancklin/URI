@@ -16,11 +16,12 @@
 #define TRUE	1
 #define FALSE	0
 
+typedef struct { char nome[51], reg[100]; float pres, aus;} Aluno;
+
 int main()
 {
-	char Nomes[100][100], Registros[100][100], Barrados[100][100];
-	int i, j, k, T, N, B;
-	float F, P, A;
+	Aluno aluno[100];
+	int i, j, k, T, N;
 	
 	#ifdef DEBUG
 		double tI_ = clock();
@@ -28,44 +29,34 @@ int main()
 	
 	scanf("%d", &T);
 	
-	for(i = 0; i < T; i++)
+	while(T--)
 	{
-		scanf("%d ", &N);
+		scanf("%d", &N);
 		
-		for(j = 0; j < N; j++)
-			scanf("%s", Nomes[j]);
+		for(i = 0; i < N; i++)
+			scanf(" %s", aluno[i].nome);
 		
-		for(j = 0; j < N; j++)
-			scanf("%s", Registros[j]);
-		
-		
-		B = 0;
-		
-		for(j = 0; j < N; j++)
-		{
-			P = A = 0;
-			
-			for(k = 0; Registros[j][k] != '\0'; k++)
-				if(Registros[j][k] == 'P')
-					P++;
-				else if(Registros[j][k] == 'A')
-					A++;
-			
-			F = P / (P + A);
-			
-			if(F < 0.75)
-			{
-				memcpy(Barrados[B], Nomes[j], strlen(Nomes[j]) + 1);
-				B++;
-			}
+		for(i = 0; i < N; i++) {
+			scanf(" %s", aluno[i].reg);
+			aluno[i].pres = aluno[i].aus = 0;
 		}
 		
-		for(j = 0; j < B; j++)
+		for(i = 0, k = 0; i < N; i++)
 		{
-			printf("%s", Barrados[j]);
+			for(j = 0; aluno[i].reg[j] != '\0'; j++)
+				if(aluno[i].reg[j] == 'P')
+					aluno[i].pres++;
+				else if(aluno[i].reg[j] == 'A')
+					aluno[i].aus++;
 			
-			if(j < (B - 1))
-				printf(" ");
+			if(aluno[i].pres / (aluno[i].pres + aluno[i].aus) < 0.75)
+			{
+				if(k)
+					printf(" ");
+				
+				printf("%s", aluno[i].nome);
+				k++;
+			}
 		}
 		
 		printf("\n");
